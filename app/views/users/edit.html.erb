@@ -1,4 +1,4 @@
-<h1>Sign up</h1>
+<h1>プロフィールを編集</h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
@@ -17,8 +17,13 @@
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation %>
 
-      <%= f.submit "create account", class: "btn btn-large btn-primary" %>
-    <% end %>
+      <%= f.label :location %>
+      <%= f.text_field :location %>
 
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+
+      <%= f.submit "update prifile",  class: "btn btn-large btn-primary" %>
+    <% end %>
   </div>
 </div>
