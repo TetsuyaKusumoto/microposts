@@ -20,7 +20,7 @@
       </td>
     </table>
   <% if logged_in? %>
-    <% if current_user.id.to_s == params[:id].to_s %>
+    <% if current_user == @user %>
       <%= link_to "プロフィールを編集", edit_user_path(@user) %>
     <% else %>
       <%#= current_user.id.to_s == params[:id].to_s %>

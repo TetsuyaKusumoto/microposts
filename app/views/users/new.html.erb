@@ -1,24 +1,36 @@
 <h1>Sign up</h1>
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
-
-      <%= f.label :name %>
-      <%= f.text_field :name, placeholder:"Taro_Suzuki" %>
-
-      <%= f.label :email %>
-      <%= f.text_field :email, placeholder:"tarosuzuki@example.com", :style =>"margin-bottom:0px " %>
-      <p class="help-block" style="margin:0px 0px 0px 0px">※半角文字で入力してください。</p>
-      <%= f.label :password %>
-      <%= f.password_field :password, placeholder:"password" %>
-
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, placeholder:"password" %>
-
-      <%= f.submit "create account", class: "btn btn-large btn-primary" %>
-    <% end %>
-
-  </div>
+<div class="form-horizontal" role="form">
+  <%= form_for(@user) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="form-group">
+      <%= f.label :name, class: "col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.text_field :name, class: "form-control", placeholder:"Taro_Suzuki" %>
+      </div>
+    </div>
+    <div class="form-group" style= "margin-bottom:0px" >
+      <%= f.label :email, class:"col-sm-2 control-label" %>
+      <div class="col-sm-10" style= "margin-bottom:0px" >
+        <%= f.text_field :email, class: "form-control", placeholder:"tarosuzuki@example.com", :style =>"margin-bottom:0px " %>
+      </div>
+    </div>
+    <p class="help-block col-sm-offset-2 col-sm-10" >※半角文字で入力してください。</p>
+    <div class="form-group">
+      <%= f.label :password, class:"col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.password_field :password, class: "form-control", placeholder:"password" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :password_confirmation, "Confirmation", class:"col-sm-2 control-label" %>
+      <div class="col-sm-10">
+        <%= f.password_field :password_confirmation, class: "form-control", placeholder:"password" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <%= f.submit "create account", class: "btn btn-large btn-primary" %>
+      </div>
+    </div>
+  <% end %>
 </div>

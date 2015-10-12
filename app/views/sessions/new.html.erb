@@ -1,18 +1,17 @@
 <h1>Log in</h1>
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(:session, url: login_path) do |f| %>
-
-      <%= f.label :email %>
-      <%= f.text_field :email, placeholder:"tarosuzuki@example.com" %>
-      <!-- <p class="help-block">※半角文字で入力してください。</p> -->
-      <%= f.label :password %>
-      <%= f.password_field :password, placeholder:"password" %>
-
-      <%= f.submit "Log in", class: "btn btn-primary" %>
-    <% end %>
-
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+<%= form_for(:session, url: login_path) do |f| %>
+  <div class="form-group" style= "margin-bottom:0px" >
+    <%= f.label :email %>
+    <%= f.text_field :email, class: "form-control", placeholder:"tarosuzuki@example.com", :style =>"margin-bottom:0px " %>
   </div>
-</div>
+  <p class="help-block" >※半角文字で入力してください。</p>
+  <div class="form-group">
+    <%= f.label :password %>
+    <%= f.password_field :password, class: "form-control", placeholder:"password" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "create account", class: "btn btn-large btn-primary" %>
+  </div>
+  <p>New user? <%= link_to "Sign up now!", signup_path %></p> 
+<% end %>
+
