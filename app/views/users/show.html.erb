@@ -19,11 +19,13 @@
         <td><%= @user.description %></td>
       </td>
     </table>
-   <% if current_user.id.to_s == params[:id].to_s then %>
-     <%= link_to "プロフィールを編集", edit_user_path(@user) %>
-   <% else %>
-     <%#= current_user.id.to_s == params[:id].to_s %>
-     <%#= current_user.id %>
-     <%#= params[:id] %>
-   <% end %>
+  <% if logged_in? %>
+    <% if @user.id.to_s == params[:id].to_s %>
+      <%= link_to "プロフィールを編集", edit_user_path(@user) %>
+    <% else %>
+      <%#= current_user.id.to_s == params[:id].to_s %>
+      <%#= current_user.id %>
+      <%#= params[:id] %>
+    <% end %>
+  <% end %>
 </div> 
