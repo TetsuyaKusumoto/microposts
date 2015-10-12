@@ -6,16 +6,16 @@
       <%= render 'shared/error_messages', object: f.object %>
 
       <%= f.label :name %>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, placeholder:"Taro_Suzuki" %>
 
       <%= f.label :email %>
-      <%= f.text_field :email %>
-
+      <%= f.text_field :email, placeholder:"tarosuzuki@example.com", :style =>"margin-bottom:0px " %>
+      <p class="help-block" style="margin:0px 0px 0px 0px">※半角文字で入力してください。</p>
       <%= f.label :password %>
-      <%= f.password_field :password %>
+      <%= f.password_field :password, placeholder:"password" %>
 
       <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
+      <%= f.password_field :password_confirmation, placeholder:"password" %>
 
       <%= f.submit "create account", class: "btn btn-large btn-primary" %>
     <% end %>

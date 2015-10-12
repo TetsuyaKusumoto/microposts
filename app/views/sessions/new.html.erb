@@ -5,10 +5,10 @@
     <%= form_for(:session, url: login_path) do |f| %>
 
       <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
-
+      <%= f.text_field :email, placeholder:"tarosuzuki@example.com" %>
+      <!-- <p class="help-block">※半角文字で入力してください。</p> -->
       <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
+      <%= f.password_field :password, placeholder:"password" %>
 
       <%= f.submit "Log in", class: "btn btn-primary" %>
     <% end %>
