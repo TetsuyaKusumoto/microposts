@@ -9,11 +9,11 @@
   </aside>
   <div class="col-md-8">
     <%= render 'follow_form' if logged_in? %>
-    <% if @following_users.any? %>
-      <h3>Followings (<%= @following_users.count %>)</h3>
+    <% if @follower_users.any? %>
+      <h3>Followers (<%= @follower_users.count %>)</h3>
       <ol class="microposts">
-        <% @following_users.each do |following_user| %>
-  <%= render partial: 'following_users/following_user', locals: { following_user: following_user } %>
+        <% @follower_users.each do |follower_user| %>
+  <%= render partial: 'follower_users/follower_user', locals: { follower_user: follower_user } %>
 <% end %>
       </ol>
     <% end %>

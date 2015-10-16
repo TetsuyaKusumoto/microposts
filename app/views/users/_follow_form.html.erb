@@ -2,21 +2,31 @@
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <ul class="nav navbar-nav">
-        <li><%= link_to "tweet",   '#' %></li>
+        <li><%= link_to "tweet", user_path %></li>
         <li><%= link_to "follow", followings_path %></li>
-        <li><%= link_to "followed",   '#' %></li>
+        <li><%= link_to "followed", followers_path %></li>
       </ul>
       <ul class="nav navbar-form navbar-right">
         <li>
-  <div id="follow_form">
-  <% if current_user.following?(@user) %>
-    <%= render 'unfollow' %>
-  <% else %>
-    <%= render 'follow' %>
-  <% end %>
-  </div>
+          <div id="follow_form">
+            <% if current_user.following?(@user) %>
+              <%= render 'unfollow' %>
+            <% else %>
+              <%= render 'follow' %>
+            <% end %>
+          </div>
         </li>
       </ul>
     </div>
   </nav> 
+<% else %>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "tweet", user_path %></li>
+        <li><%= link_to "follow", followings_path %></li>
+        <li><%= link_to "followed", followers_path %></li>
+      </ul>
+    </div>
+  </nav>
 <% end %>
