@@ -30,4 +30,8 @@ class User < ActiveRecord::Base
   def following?(other_user)
     following_users.include?(other_user)
   end
+  
+  def followings(other_user)
+    following_relationships.find_by(follower_id: other_user.id)
+  end
 end
