@@ -37,4 +37,8 @@ class User < ActiveRecord::Base
   def followers(other_user)
     follower_relationships.find_by(followed_id: other_user.id)
   end
+  def feed_items
+    Micropost.where(user_id: following_user_ids + [self.id])
+  end
+
 end
