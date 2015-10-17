@@ -1,0 +1,18 @@
+<div>
+<li id="follower-<%= following_user.name %>">
+  <div class="card hovercard">
+                <div class="cardheader">
+
+                </div>
+                <div class="avatar">
+<%= link_to gravatar_for(following_user, size: 50), following_user %>
+                </div>
+                <div class="info">
+                    <div class="title">
+<span class="user"><%= link_to following_user.name, following_user %></span>
+                    </div>
+                    <div class="desc"><%= following_user.description %></div>
+                    <div class="desc"><%=  following_user.location %></div>
+                </div>
+</li>
+</div>
