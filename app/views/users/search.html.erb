@@ -1,0 +1,19 @@
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        おすすめユーザ（準備中）
+      </h1>
+    </section>
+  </aside>
+  <div class="col-md-6">
+    <% if @searched_users.any? %>
+      <h3>検索結果 (<%= @searched_users.count %>)</h3>
+      <ol class="microposts">
+        <% @searched_users.each do |searched_user| %>
+          <%= render partial: 'searched_users/searched_user', locals: { searched_user: searched_user } %>
+        <% end %>
+      </ol>
+    <% end %>
+  </div>
+</div> 

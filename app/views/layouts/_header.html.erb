@@ -2,11 +2,22 @@
   <div class="container">
     <%= link_to "Microposts", '#', id: "logo" %>
     <nav>
+      <%= form_tag(search_user_path, method:'get', class:"nav navbar-right navbar-form form-group", role:"search") do %>
+        <%= text_field_tag :search, params[:search], class:"form-control", placeholder:"知り合いを探す", style:"margin-bottom:0px " %>
+        <%= submit_tag "Search", style: "display:none", :name => nil %>
+      <% end %>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Help",   '#' %></li>
         <% if logged_in? %>
-          <li><%= link_to "Users", '#' %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Users <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "準備中", "#" %></li>
+            </ul>
+          </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               Account <b class="caret"></b>

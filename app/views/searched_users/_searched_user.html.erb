@@ -1,0 +1,14 @@
+<li id="user-<%= searched_user.name %>">
+  <%= link_to gravatar_for(searched_user, size: 50), searched_user %>
+  <span class="user"><%= link_to searched_user.name, searched_user %></span>
+  <% if !searched_user.description %>
+    <span class="content">プロフィール準備中</span>
+  <% else %>
+    <span class="content"><%= searched_user.description %></span>
+  <% end %>
+  <% if !searched_user.location %>
+    <span class="content">地域未設定</span>
+  <% else %>
+    <span class="content"><%=  searched_user.location %></span>
+  <% end %>
+</li>

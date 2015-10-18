@@ -1,12 +1,12 @@
 <li id="follower-<%= follower_user.name %>">
   <%= link_to gravatar_for(follower_user, size: 50), follower_user %>
   <span class="user"><%= link_to follower_user.name, follower_user %></span>
-  <% if !follower_user.description %>
+  <% if follower_user.description.blank? %>
     <span class="content">プロフィール準備中</span>
   <% else %>
     <span class="content"><%= follower_user.description %></span>
   <% end %>
-  <% if !follower_user.location %>
+  <% if follower_user.location.blank? %>
     <span class="content">地域未設定</span>
   <% else %>
     <span class="content"><%=  follower_user.location %></span>

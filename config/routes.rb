@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   get 'users/:id/followings', to: 'users#followings', as: 'followings'
   get 'users/:id/followers', to: 'users#followers', as: 'followers'
-
+  get 'search', to: 'users#search', as: 'search_user'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
