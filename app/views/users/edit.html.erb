@@ -1,5 +1,5 @@
 <h1>プロフィールを編集</h1>
-    <%= render 'shared/error_messages', object: f.object %>
+      <%= render 'shared/error_messages', object: f.object %>
       <div class="form-group">
         <%= f.label :name, class: "col-sm-2 control-label" %>
         <div class="col-sm-10">
@@ -42,4 +42,3 @@
           <%= f.submit "update profile", class: "btn btn-large btn-primary" %>
         </div>
       </div>
-    <% end %>
