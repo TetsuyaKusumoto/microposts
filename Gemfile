@@ -35,6 +35,7 @@ gem 'simple_form'
 
 gem 'paperclip'
 gem 'cloudinary'
+gem 'aws-sdk'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
